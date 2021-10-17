@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Little Snake</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+    <script defer src="game.js" type="module"></script>
+</head>
+<body>
+    <div class="decoy"></div>
+    <header>
+        <div data-projects class="projects hfont">
+            <a href="../calculator2/calculatorindex.html" class="hfont">Calculator</a>
+            <a href="../clock/clockindex.html" class="hfont">Clock</a>
+        </div>
+        <div data-speed-control class="speed-controls">
+            <div class="control-text hfont">Snake Speed</div>
+            <div class="speed-controler">
+                <button data-decrease-button class="snake-speed decrease hfont">-</button>
+                <div data-snake-speed class="snake-speed hfont"></div>
+                <button data-increase-button class="snake-speed increase hfont">+</button>
+            </div>
+        </div>
+        <div data-points class="score"></div>
+        <div data-high-score class="score"></div>
+        <div data-all-time-high-score class="score"></div>
+    </header>
+    <div data-game-container class="container">
+        <div data-game-board id="game-board"></div>
+        <div data-mobile-control-buttons class="mobile-control-buttons">
+            <button data-arrow-up class="up arrow">↑</button>
+            <button data-arrow-left class="left arrow">←</button>
+            <button data-arrow-right class="right arrow">→</button>
+            <button data-arrow-down class="down arrow">↓</button>
+        </div>
+    </div>
+</body>
+</html>
