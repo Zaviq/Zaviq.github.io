@@ -71,7 +71,7 @@ a{
 .clock .number9{--rotation:270deg;}
 .clock .number10{--rotation:300deg;}
 .clock .number11{--rotation:330deg;}
-
+/*fix orientation of clock numbers*/
 .value{transform: rotate(calc(0deg - var(--rotation)));}
 
 .clock .hand{
