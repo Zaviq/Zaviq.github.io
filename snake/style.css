@@ -2,6 +2,7 @@ body{
     margin: 0;
     padding: 0;
     background-color: black;
+    overflow-y: hidden;
 }
 div.decoy{
     display: none;
@@ -27,6 +28,7 @@ a{
 .container{
     margin: auto;
     padding: 0;
+    width: 100vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -88,7 +90,7 @@ a{
     display: none;
 }
 
-@media all and (min-width:40vh) and (max-width: 80vh) {
+@media all and (max-width: 80vh) {
     .projects{
         display: flex;
         flex-direction: column;
@@ -154,8 +156,9 @@ a{
     }
 
     #game-board{
-        width: 100vmin;
-        height: 100vmin;
+        --gbdemensions:0;
+        width: var(--gbdemensions);
+        height: var(--gbdemensions);
     }
 
 

@@ -33,3 +33,5 @@ function removeFirstChild(){
 }
 
 setTimeout(removeFirstChild, 1500);
+
+document.querySelector('[data-game-board]').style.setProperty('--gbdemensions', document.querySelector('[data-game-container]').offsetWidth + 'px' )
