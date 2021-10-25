@@ -4,7 +4,7 @@ import { outsideGrid } from './grid.js'
 
 import {update as updateFood, draw as drawFood } from './food.js'
 import { displayHighScores, setHighScores, updatePoints } from './scoring.js'
-import { decreaseSnakeSpeed, increaseSnakeSpeed, snakeSpeed, updateSnakeSpeed } from './settings.js'
+import { decreaseSnakeSpeed, increaseSnakeSpeed, snakeSpeed, updateSnakeSpeed, setSpeedCookie } from './settings.js'
 
 const speedDecreaseButton = document.querySelector('[data-decrease-button]')
 
@@ -16,10 +16,10 @@ let gameOver = false
 
 const gameBoard = document.querySelector('[data-game-board]')
 
-
 function main(currentTime){
     if(gameOver){
         setHighScores()
+        setSpeedCookie('snakeSpeed', snakeSpeed, 7)
         if(confirm('You lost! Press OK to restart.')){
             window.location.reload()
         }
