@@ -1,4 +1,4 @@
-const GRID_SIZE = 21
+import {GRID_SIZE} from './settings.js'
 
 export function randomGridPosition(){
     return {

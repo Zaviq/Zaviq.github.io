@@ -8,7 +8,7 @@ div.decoy{
     display: none;
 }
 .hfont{
-    font-size: 2rem;
+    font-size: 1rem;
     color: green;
 }
 header{
@@ -63,22 +63,42 @@ a{
     text-align: center;
 }
 .score{
-    font-size: 2rem;
+    font-size: 1rem;
     color: green;
 }
 
 #game-board{
+    --gridsize:0;
     background-color: #ccc;
     display: grid;
     width: calc(100vmin - 4rem);
     height: calc(100vmin - 4rem);
-    grid-template-rows: repeat(21, 1fr);
-    grid-template-columns: repeat(21, 1fr);
+    grid-template-rows: repeat(var(--gridsize), 1fr);
+    grid-template-columns: repeat(var(--gridsize), 1fr);
 }
-
 .snake{
     background-color: hsl(200, 100%, 50%);
     border: .25vmin solid black;
+    padding: 0;
+    margin: 0;
+}
+
+.snakehead{
+    --headrotation:0;
+    transform: rotate(calc(var(--headrotation) * 1deg));
+    padding: 0;
+    line-height: 0.70em;
+    color: hsl(200, 100%, 50%);
+}
+
+.snake-body-h{
+    margin-top: 20%;
+    margin-bottom: 20%;
+}
+
+.snake-body-v{
+    margin-right: 20%;
+    margin-left: 20%;
 }
 
 .food{

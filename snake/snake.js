@@ -1,9 +1,11 @@
 import { getInputDirection } from "./input.js"
 
-const snakeBody = [{x:11, y:11}]
+export let snakeBody = [{x:11, y:11,d:'',hr:0}]
 
 let newSegments = 0
-
+export function resetSnakeBody(){
+    snakeBody = [{x:11,y:11,d:'',hr:0}]
+}
 export function update(){
     const inputDirection = getInputDirection()
     for(let i = snakeBody.length -2; i >=0; i--){
@@ -12,6 +14,8 @@ export function update(){
     addSegments()
     snakeBody[0].x += inputDirection.x
     snakeBody[0].y += inputDirection.y
+    snakeBody[0].d = inputDirection.d
+    snakeBody[0].hr = inputDirection.hr
 }
 
 export function draw(gameBoard){
@@ -20,6 +24,24 @@ export function draw(gameBoard){
         snakeElement.style.gridRowStart = segment.y
         snakeElement.style.gridColumnStart = segment.x
         snakeElement.classList.add('snake')
+        if(snakeBody[0] === segment) {
+            snakeElement.classList.remove('snake')
+            snakeElement.classList.add('snakehead')
+            gameBoard.appendChild(snakeElement)
+            const snakeHead = document.createElement('img')
+            snakeHead.setAttribute('src', 'snake-svgrepo-com.svg')
+            document.querySelector('.snakehead').appendChild(snakeHead)
+            document.querySelector('.snakehead').style.setProperty('--headrotation', segment.hr)
+            return
+        }
+        if(segment.d == 'v'){
+            snakeElement.classList.remove('snake-body-h')
+            snakeElement.classList.add('snake-body-v')
+        }
+        if(segment.d == 'h'){
+            snakeElement.classList.remove('snake-body-v')
+            snakeElement.classList.add('snake-body-h')
+        }
         gameBoard.appendChild(snakeElement)
     })
 }
