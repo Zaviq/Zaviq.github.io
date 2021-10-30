@@ -77,35 +77,44 @@ a{
     grid-template-columns: repeat(var(--gridsize), 1fr);
 }
 .snake{
+    position: relative;
+    left: 2%;
+    top: 2.5%;
     background-color: hsl(200, 100%, 50%);
     border: .25vmin solid black;
     padding: 0;
-    margin: 0;
 }
 
 .snakehead{
     --headrotation:0;
     transform: rotate(calc(var(--headrotation) * 1deg));
     padding: 0;
-    width: 150%;
-    height: 150%;
+    width: 110%;
+    height: 110%;
     line-height: 0.70em;
     position: relative;
-    top: -0.2rem;
-    left: -0.2rem;
+    top: -1%;
+    left: -3.5%;
     overflow: hidden;
 }
 
+.snakehead > svg{
+    fill: hsl(200, 100%, 50%);
+    stroke: black;
+}
+
 .snake-body-h{
-    margin-top: 20%;
-    margin-bottom: 20%;
+    margin: auto;
+    width: 100%;
+    height: 40%;
     border-left: none;
     border-right: none;
 }
 
 .snake-body-v{
-    margin-right: 20%;
-    margin-left: 20%;
+    margin: auto;
+    width: 40%;
+    height: 100%;
     border-top: none;
     border-bottom: none;
 }
@@ -114,6 +123,11 @@ a{
     padding: 0;
     line-height: 0.70em;
     overflow: hidden;
+}
+
+.food > svg{
+    fill: white;
+    stroke: red;
 }
 
 .mobile-control-buttons{

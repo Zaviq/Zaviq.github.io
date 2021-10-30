@@ -39,6 +39,7 @@ export function stopGame(id){
 
 function main(){
     if(gameOver){
+        setHighScores()
         if(confirm('You lost! Press OK to restart.')){
             stopGame(game)
             resetGame()
@@ -46,7 +47,6 @@ function main(){
             setFirstposition()
             updatePoints(0)
         } else {
-            setHighScores()
             stopGame(game)
             window.location.reload()
         }

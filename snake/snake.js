@@ -28,12 +28,11 @@ export function draw(gameBoard){
             snakeElement.classList.remove('snake')
             snakeElement.classList.add('snakehead')
             gameBoard.appendChild(snakeElement)
-            const snakeHead = document.createElement('img')
-            snakeHead.setAttribute('src', 'snake-svgrepo-com.svg')
-            document.querySelector('.snakehead').appendChild(snakeHead)
+            snakeElement.innerHTML = '<svg viewBox="0 0 24 24" ><polygon points="12 22, 22 1, 2 1" /></svg>'
             document.querySelector('.snakehead').style.setProperty('--headrotation', segment.hr)
             return
         }
+        
         if(segment.d == 'v'){
             snakeElement.classList.remove('snake-body-h')
             snakeElement.classList.add('snake-body-v')

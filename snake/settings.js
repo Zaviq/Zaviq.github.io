@@ -15,7 +15,7 @@ export function resetGame(){
 
 export let snakeSpeed = getSpeedCookie('snakeSpeed')=="" ? 5 : parseInt(getSpeedCookie('snakeSpeed'))
 
-export let GRID_SIZE = 40
+export let GRID_SIZE = 20
 document.querySelector('[data-game-board]').style.setProperty('--gridsize', GRID_SIZE)
 const snakeSpeedIndicator = document.querySelector('[data-snake-speed]')
 
