@@ -87,24 +87,33 @@ a{
     --headrotation:0;
     transform: rotate(calc(var(--headrotation) * 1deg));
     padding: 0;
+    width: 150%;
+    height: 150%;
     line-height: 0.70em;
-    color: hsl(200, 100%, 50%);
+    position: relative;
+    top: -0.2rem;
+    left: -0.2rem;
+    overflow: hidden;
 }
 
 .snake-body-h{
     margin-top: 20%;
     margin-bottom: 20%;
+    border-left: none;
+    border-right: none;
 }
 
 .snake-body-v{
     margin-right: 20%;
     margin-left: 20%;
+    border-top: none;
+    border-bottom: none;
 }
 
 .food{
-    background-color: hsl(50, 100%, 50%);
-    border: .25vmin solid black;
-    border-radius: 50%;
+    padding: 0;
+    line-height: 0.70em;
+    overflow: hidden;
 }
 
 .mobile-control-buttons{

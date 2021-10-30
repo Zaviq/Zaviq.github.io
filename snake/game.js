@@ -3,7 +3,7 @@ import {update as updateSnake, draw as drawSnake, getSnakeHead, snakeIntersectio
 import { outsideGrid } from './grid.js'
 
 import {update as updateFood, draw as drawFood, setFirstFoodPosition } from './food.js'
-import { displayHighScores, setHighScores, updatePoints } from './scoring.js'
+import { displayHighScores, displayLiveHighScores, setHighScores, updatePoints } from './scoring.js'
 import { decreaseSnakeSpeed, increaseSnakeSpeed, snakeSpeed, updateSnakeSpeed, setSpeedCookie, resetGame } from './settings.js'
 
 export const speedDecreaseButton = document.querySelector('[data-decrease-button]')
@@ -44,7 +44,9 @@ function main(){
             resetGame()
             setFirstFoodPosition()
             setFirstposition()
+            updatePoints(0)
         } else {
+            setHighScores()
             stopGame(game)
             window.location.reload()
         }

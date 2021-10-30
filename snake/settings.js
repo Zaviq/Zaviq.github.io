@@ -1,6 +1,6 @@
 import { resetParam, speedDecreaseButton, speedIncreaseButton } from "./game.js"
 import { resetInputDirection } from "./input.js"
-import { setHighScores } from "./scoring.js"
+import { displayLiveHighScores, getLiveHighScores, resetPoints } from "./scoring.js"
 import { resetSnakeBody } from './snake.js'
 
 
@@ -8,8 +8,9 @@ export function resetGame(){
     resetParam()
     resetInputDirection()
     resetSnakeBody()
-    setHighScores()
     setSpeedCookie('snakeSpeed', snakeSpeed, 7)
+    displayLiveHighScores()
+    resetPoints()
 }
 
 export let snakeSpeed = getSpeedCookie('snakeSpeed')=="" ? 5 : parseInt(getSpeedCookie('snakeSpeed'))

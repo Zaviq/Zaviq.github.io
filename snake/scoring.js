@@ -5,7 +5,13 @@ const highScoreBoard = document.querySelector('[data-high-score]')
 
 const allTimeHighScoreBoard = document.querySelector('[data-all-time-high-score]')
 
-export let points = 0
+export let points
+
+export function resetPoints(){
+    points = 0
+}
+
+resetPoints()
 
 export const id = 'firt-gamer'
 
@@ -49,12 +55,18 @@ function getScoreCookie(cname) {
 }
 
 export function setHighScores(){
-    let highScoresToSet = points.toString() + "-" + allTimeHighScore.toString()
+    let highScoresToSet = lastHighScore.toString() + "-" + allTimeHighScore.toString()
     setScoreCookie(id, highScoresToSet, 7)
 }
 
 export function displayHighScores(){
     getHighScores()
+    highScoreBoard.innerText = "Last Score: " + lastHighScore
+    allTimeHighScoreBoard.innerText = "High Score: " + allTimeHighScore
+}
+
+export function displayLiveHighScores(){
+    getLiveHighScores()
     highScoreBoard.innerText = "Last Score: " + lastHighScore
     allTimeHighScoreBoard.innerText = "High Score: " + allTimeHighScore
 }
@@ -65,3 +77,9 @@ function getHighScores(){
     allTimeHighScore = parseInt(splitHighScores[0]) < parseInt(splitHighScores[1]) ? splitHighScores[1] : splitHighScores[0]
     lastHighScore = splitHighScores[0]
 }
+
+export function getLiveHighScores(){
+    allTimeHighScore = parseInt(splitHighScores[0]) < parseInt(splitHighScores[1]) ? splitHighScores[1] : splitHighScores[0]
+    lastHighScore = points
+}
+

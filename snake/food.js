@@ -24,6 +24,9 @@ export function draw(gameBoard){
     foodElement.style.gridColumnStart = food.x
     foodElement.classList.add('food')
     gameBoard.appendChild(foodElement)
+    const apple = document.createElement('img')
+    apple.setAttribute('src', 'apple-with-leaf-svgrepo-com.svg')
+    document.querySelector('.food').appendChild(apple)
 }
 
 export function getRandomFoodPosition(){
